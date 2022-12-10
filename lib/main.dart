@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sun_coast/pages/estabelecimento_page.dart';
 import 'package:sun_coast/pages/estado_page.dart';
 import 'package:sun_coast/pages/cidade_page.dart';
+import 'package:sun_coast/pages/praia_bar_page.dart';
 import 'package:sun_coast/pages/praia_page.dart';
 import 'package:sun_coast/pages/bar_page.dart';
 import 'package:sun_coast/pages/categoria_page.dart';
+import 'package:sun_coast/pages/prato_page.dart';
+import 'package:sun_coast/pages/tipo_estabelecimento_page.dart';
 import 'utils/app_routes.dart';
 
 void main() {
@@ -38,9 +40,12 @@ class SunCoastApp extends StatelessWidget {
         AppRoutes.ESTADO: (context) => const EstadoPage(),
         AppRoutes.CIDADE: (context) => const CidadePage(),
         AppRoutes.PRAIA: (context) => const PraiaPage(),
+        AppRoutes.PRAIABAR: (context) => const PraiaBarPage(),
+        AppRoutes.TIPOESTABELECIMENTO: (context) =>
+            const TipoEstabelecimentoPage(),
         AppRoutes.BAR: (context) => const BarPage(),
         AppRoutes.CATEGORIA: (context) => const CategoriaPage(),
-        AppRoutes.ESTABELECIMENTO: (context) => const EstabelecimentoPage(),
+        AppRoutes.PRATO: (context) => const PratoPage(),
       },
     );
   }

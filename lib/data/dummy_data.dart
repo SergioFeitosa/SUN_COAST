@@ -7,6 +7,8 @@ import 'package:sun_coast/models/categoria.dart';
 import 'package:sun_coast/models/estabelecimento.dart';
 import 'package:sun_coast/models/estado.dart';
 import 'package:sun_coast/models/cidade.dart';
+import 'package:sun_coast/models/prato.dart';
+import 'package:sun_coast/models/restaurante.dart';
 
 import '../models/praia.dart';
 
@@ -20,7 +22,7 @@ const DUMMY_ESTADOS = const [
       populacao: 906876,
       temperaturaMediaVerao: 27,
       temperaturaMediaInverno: 25,
-      cidades: ['1']),
+      cidades: ['1', '2']),
   Estado(
       id: '2',
       bandeira: 'assets/images/estados/bandeira-alagoas-600x400.png',
@@ -283,7 +285,7 @@ const DUMMY_CIDADES = const [
       imagem: 'assets/images/cidades/joao-pessoa.jpg',
       nome: 'João Pessoa',
       temperatura: 27,
-      praias: ['5']),
+      praias: ['1', '2', '3', '4', '5']),
   Cidade(
       id: '5',
       imagem: 'assets/images/cidades/lucena.jpg',
@@ -324,97 +326,165 @@ const DUMMY_PRAIAS = [
       imagem: 'assets/images/praias/praia-bessa.jpg',
       nome: 'Bessa',
       temperatura: 27,
-      bares: ['1']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '1',
+      id: '2',
       imagem: 'assets/images/praias/praia-manaira.jpg',
       nome: 'Manaíra',
       temperatura: 27,
-      bares: ['1']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '2',
+      id: '3',
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Cabo Branco',
       temperatura: 27,
-      bares: ['2']),
+      tipoEstabelecimentos: [
+        '1',
+        '2',
+        '3'
+      ],
+      bares: [
+        '1',
+        '2',
+        '3',
+        '4',
+      ],
+      restaurantes: [
+        '1'
+      ]),
   Praia(
-      id: '3',
+      id: '4',
       imagem: 'assets/images/cidades/cabedelo.jpg',
       nome: 'Ponta do Seixas',
       temperatura: 27,
-      bares: ['3']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '4',
+      id: '5',
       imagem: 'assets/images/praias/praia-tambau.jpg',
       nome: 'Tambaú',
       temperatura: 27,
-      bares: ['4']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '5',
+      id: '6',
       imagem: 'assets/images/cidades/joao-pessoa.jpg',
       nome: 'João Pessoa',
       temperatura: 27,
-      bares: ['5']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '6',
+      id: '7',
       imagem: 'assets/images/cidades/lucena.jpg',
       nome: 'Lucena',
       temperatura: 27,
-      bares: ['6']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '7',
+      id: '8',
       imagem: 'assets/images/cidades/marcacao.jpg',
       nome: 'Marcação',
       temperatura: 27,
-      bares: ['7']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '8',
+      id: '9',
       imagem: 'assets/images/cidades/mataraca.jpg',
       nome: 'Mataraca',
       temperatura: 27,
-      bares: ['8']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '9',
+      id: '10',
       imagem: 'assets/images/cidades/pitimbu.jpg',
       nome: 'Pitimbú',
       temperatura: 27,
-      bares: ['9']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
   Praia(
-      id: '10',
+      id: '11',
       imagem: 'assets/images/cidades/rio-tinto.jpg',
       nome: 'Rio Tinto',
       temperatura: 27,
-      bares: ['10']),
+      tipoEstabelecimentos: ['1'],
+      bares: ['1'],
+      restaurantes: ['1']),
 ];
 
 const DUMMY_BARES = [
   Bar(
       id: '1',
       imagem: 'assets/images/praias/praia-bessa.jpg',
-      nome: 'BAR DO zÉ',
-      categorias: ['1']),
+      nome: 'Bar do Zé',
+      categorias: ['1', '2'],
+      pratosRegionais: ['1', '2', '3'],
+      pratosTradicionais: ['1', '2', '3'],
+      porcoes: ['1', '2', '3']),
   Bar(
       id: '2',
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Bar Bantinho',
-      categorias: ['2']),
+      categorias: ['2'],
+      pratosRegionais: [],
+      pratosTradicionais: ['1'],
+      porcoes: []),
   Bar(
       id: '3',
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Bar racuda',
-      categorias: ['3']),
+      categorias: ['3'],
+      pratosRegionais: [],
+      pratosTradicionais: [],
+      porcoes: ['1', '2', '3']),
   Bar(
       id: '4',
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Bar toré',
+      categorias: ['1'],
+      pratosRegionais: ['1', '2', '3'],
+      pratosTradicionais: [],
+      porcoes: []),
+];
+
+const DUMMY_RESTAURANTES = [
+  Restaurante(
+      id: '1',
+      imagem: 'assets/images/praias/praia-bessa.jpg',
+      nome: 'RESTAURANTE DO zÉ',
+      categorias: ['1']),
+  Restaurante(
+      id: '2',
+      imagem: 'assets/images/praias/praia-cabo-branco.jpg',
+      nome: 'RESTAURANTE Bantinho',
+      categorias: ['2']),
+  Restaurante(
+      id: '3',
+      imagem: 'assets/images/praias/praia-cabo-branco.jpg',
+      nome: 'RESTAURANTE racuda',
+      categorias: ['3']),
+  Restaurante(
+      id: '4',
+      imagem: 'assets/images/praias/praia-cabo-branco.jpg',
+      nome: 'RESTAURANTE toré',
       categorias: ['4']),
 ];
 
 // ignore: unnecessary_const, constant_identifier_names
-const DUMMY_ESTABELECIMENTOS = const [
+const DUMMY_TIPO_ESTABELECIMENTOS = const [
   Estabelecimento(
     id: '1',
-    title: 'Restaurantes',
+    title: 'Bares',
     color: Colors.purple,
   ),
   Estabelecimento(
@@ -437,18 +507,19 @@ const DUMMY_ESTABELECIMENTOS = const [
     title: 'Feirinhas',
     color: Colors.grey,
   ),
+  Estabelecimento(id: '6', title: 'Restaurantes', color: Colors.orange),
 ];
 
 // ignore: unnecessary_const, constant_identifier_names
 const DUMMY_CATEGORIAS = const [
   Categoria(
     id: '1',
-    title: 'Regional',
+    title: 'Pratos    Regionais',
     color: Colors.purple,
   ),
   Categoria(
     id: '2',
-    title: 'Tradicional',
+    title: 'Pratos Tradicionais',
     color: Colors.red,
   ),
   Categoria(
@@ -465,5 +536,39 @@ const DUMMY_CATEGORIAS = const [
     id: '5',
     title: 'Drinks',
     color: Colors.grey,
+  ),
+];
+
+// ignore: unnecessary_const, constant_identifier_names
+const DUMMY_PRATOS = const [
+  Prato(
+    id: '1',
+    title: 'Baião de Dois',
+    color: Colors.purple,
+    imagem: 'assets/images/praias/praia-bessa.jpg',
+  ),
+  Prato(
+    id: '2',
+    title: 'Bobó de camarão',
+    color: Colors.red,
+    imagem: 'assets/images/praias/praia-bessa.jpg',
+  ),
+  Prato(
+    id: '3',
+    title: 'Feijoada',
+    color: Colors.orange,
+    imagem: 'assets/images/praias/praia-bessa.jpg',
+  ),
+  Prato(
+    id: '4',
+    title: 'Moqueca de Badejo',
+    color: Colors.cyan,
+    imagem: 'assets/images/praias/praia-bessa.jpg',
+  ),
+  Prato(
+    id: '5',
+    title: 'Virado a Paulista',
+    color: Colors.grey,
+    imagem: 'assets/images/praias/praia-bessa.jpg',
   ),
 ];

@@ -13,7 +13,7 @@ class CategoriaPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(bar.nome),
+        title: Text('${bar.nome} -- Cardápio'),
       ),
       body: GridView(
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(

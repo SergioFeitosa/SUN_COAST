@@ -7,21 +7,27 @@ import '../data/dummy_data.dart';
 class PraiaPage extends StatelessWidget {
   const PraiaPage({super.key});
 
-  void _selectEstabelecimento(BuildContext context, Praia praia) {
+  void _selectTipoEstabelecimento(BuildContext context, Praia praia) {
     Navigator.of(context).pushNamed(
-      AppRoutes.ESTABELECIMENTO,
+      AppRoutes.TIPOESTABELECIMENTO,
       arguments: praia,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    const tabela = DUMMY_PRAIAS;
     final cidade = ModalRoute.of(context)?.settings.arguments as Cidade;
+
+    final tabela = DUMMY_PRAIAS
+        .where((praia) => cidade.praias.contains(praia.id))
+        .toList();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(cidade.nome),
+        title: Text(
+          '${cidade.nome} -- Praias',
+          style: const TextStyle(fontSize: 16),
+        ),
       ),
       body: Column(
         children: [
@@ -47,7 +53,8 @@ class PraiaPage extends StatelessWidget {
             child: ListView.separated(
               itemBuilder: (BuildContext context, int praia) {
                 return ListTile(
-                  onTap: () => _selectEstabelecimento(context, tabela[praia]),
+                  onTap: () =>
+                      _selectTipoEstabelecimento(context, tabela[praia]),
                   leading: Image.asset(
                     tabela[praia].imagem,
                     width: 50,

@@ -26,7 +26,10 @@ class EstadoPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Estados'),
+        title: const Text(
+          'Estados',
+          style: TextStyle(fontSize: 16),
+        ),
       ),
       body: Column(
         children: [

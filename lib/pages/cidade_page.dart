@@ -16,11 +16,16 @@ class CidadePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const tabela = DUMMY_CIDADES;
     final estado = ModalRoute.of(context)?.settings.arguments as Estado;
+    List tabela = DUMMY_CIDADES
+        .where((cidade) => estado.cidades.contains(cidade.id))
+        .toList();
     return Scaffold(
       appBar: AppBar(
-        title: Text(estado.nome),
+        title: Text(
+          '${estado.nome} -- Cidades',
+          style: const TextStyle(fontSize: 16),
+        ),
       ),
       body: Column(
         children: [

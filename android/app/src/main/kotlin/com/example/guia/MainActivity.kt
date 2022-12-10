@@ -1,4 +1,4 @@
-package com.example.sun_coast
+package com.example.guia
 
 import io.flutter.embedding.android.FlutterActivity
 
