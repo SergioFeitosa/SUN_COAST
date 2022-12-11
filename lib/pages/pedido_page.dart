@@ -1,36 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:sun_coast/data/dummy_data.dart';
-import 'package:sun_coast/models/bar.dart';
-import 'package:sun_coast/models/pedido.dart';
-import 'package:sun_coast/models/prato.dart';
+import 'package:sun_coast/models/cidade.dart';
+import 'package:sun_coast/models/praia.dart';
 import 'package:sun_coast/utils/app_routes.dart';
+import '../data/dummy_data.dart';
 
-class PratoPage extends StatelessWidget {
-  // ignore: prefer_typing_uninitialized_variables
-  final namePage;
+class PedidoPage extends StatelessWidget {
+  const PedidoPage({super.key});
 
-  const PratoPage({super.key, this.namePage});
-
-  void _selectPedido(BuildContext context, Prato prato) {
+  void _selectTipoEstabelecimento(BuildContext context, Praia praia) {
     Navigator.of(context).pushNamed(
-      AppRoutes.PEDIDO,
-      arguments: prato,
+      AppRoutes.TIPOESTABELECIMENTO,
+      arguments: praia,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final bar = ModalRoute.of(context)?.settings.arguments as Bar;
+    final cidade = ModalRoute.of(context)?.settings.arguments as Cidade;
 
-    final tabela = DUMMY_PRATOS
-        .where((prato) => bar.pratosRegionais.contains(prato.id))
+    final tabela = DUMMY_PRAIAS
+        .where((praia) => cidade.praias.contains(praia.id))
         .toList();
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Prato -- Regional',
-          style: TextStyle(fontSize: 16),
+        title: Text(
+          '${cidade.nome} -- Praias',
+          style: const TextStyle(fontSize: 16),
         ),
       ),
       body: Column(
@@ -53,18 +49,18 @@ class PratoPage extends StatelessWidget {
               ),
             ),
           ),
-          // ignore: prefer_const_constructors
           Expanded(
             child: ListView.separated(
-              itemBuilder: (BuildContext context, int prato) {
+              itemBuilder: (BuildContext context, int praia) {
                 return ListTile(
-                  onTap: () => _selectPedido(context, tabela[prato]),
+                  onTap: () =>
+                      _selectTipoEstabelecimento(context, tabela[praia]),
                   leading: Image.asset(
-                    tabela[prato].imagem,
+                    tabela[praia].imagem,
                     width: 50,
                   ),
-                  title: Text('  ${tabela[prato].title}'),
-                  trailing: Text(tabela[prato].descricao.toString()),
+                  title: Text('  ${tabela[praia].nome}'),
+                  trailing: Text(tabela[praia].temperatura.toString()),
                 );
               },
               padding: const EdgeInsets.all(16),

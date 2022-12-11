@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sun_coast/pages/estado_page.dart';
 import 'package:sun_coast/pages/cidade_page.dart';
+import 'package:sun_coast/pages/pedido_page.dart';
 import 'package:sun_coast/pages/praia_bar_page.dart';
 import 'package:sun_coast/pages/praia_page.dart';
 import 'package:sun_coast/pages/bar_page.dart';
@@ -45,6 +46,7 @@ class SunCoastApp extends StatelessWidget {
             const TipoEstabelecimentoPage(),
         AppRoutes.BAR: (context) => const BarPage(),
         AppRoutes.CATEGORIA: (context) => const CategoriaPage(),
+        AppRoutes.PEDIDO: (context) => const PedidoPage(),
         AppRoutes.PRATO: (context) => const PratoPage(),
       },
     );

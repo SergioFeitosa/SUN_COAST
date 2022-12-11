@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Prato {
+class Pedido {
   final String id;
   final String title;
   final Color color;
   final String imagem;
   final String descricao;
 
-  const Prato({
+  const Pedido({
     required this.id,
     required this.title,
     this.color = Colors.orange,

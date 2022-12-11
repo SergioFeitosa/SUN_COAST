@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sun_coast/models/bar.dart';
 import 'package:sun_coast/pages/prato_page.dart';
+import 'package:sun_coast/utils/app_routes.dart';
 
 class BarPage extends StatelessWidget {
   const BarPage({super.key});
+
+  void _selectPrato(BuildContext context, Bar bar) {
+    Navigator.of(context).pushNamed(
+      AppRoutes.PRATO,
+      arguments: bar,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

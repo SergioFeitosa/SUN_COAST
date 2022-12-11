@@ -9,6 +9,7 @@ class AppRoutes {
   static const FASTFOOD = '/fastfood';
   static const HOME = '/';
   static const HOTEL = '/hotel';
+  static const PEDIDO = '/pedido';
   static const POUSADA = '/pousada';
   static const PRAIA = '/praia';
   static const PRAIABAR = '/praiabar';

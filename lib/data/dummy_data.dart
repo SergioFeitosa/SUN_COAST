@@ -436,7 +436,7 @@ const DUMMY_BARES = [
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Bar Bantinho',
       categorias: ['2'],
-      pratosRegionais: [],
+      pratosRegionais: ['1'],
       pratosTradicionais: ['1'],
       porcoes: []),
   Bar(
@@ -444,7 +444,7 @@ const DUMMY_BARES = [
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Bar racuda',
       categorias: ['3'],
-      pratosRegionais: [],
+      pratosRegionais: ['1'],
       pratosTradicionais: [],
       porcoes: ['1', '2', '3']),
   Bar(
@@ -546,29 +546,34 @@ const DUMMY_PRATOS = const [
     title: 'Baião de Dois',
     color: Colors.purple,
     imagem: 'assets/images/praias/praia-bessa.jpg',
+    descricao: 'Prato da cozinha nordestina 0001',
   ),
   Prato(
     id: '2',
     title: 'Bobó de camarão',
     color: Colors.red,
     imagem: 'assets/images/praias/praia-bessa.jpg',
+    descricao: 'Prato da cozinha nordestina 0002',
   ),
   Prato(
     id: '3',
     title: 'Feijoada',
     color: Colors.orange,
     imagem: 'assets/images/praias/praia-bessa.jpg',
+    descricao: 'Prato da cozinha nordestina 0003',
   ),
   Prato(
     id: '4',
     title: 'Moqueca de Badejo',
     color: Colors.cyan,
     imagem: 'assets/images/praias/praia-bessa.jpg',
+    descricao: 'Prato da cozinha nordestina 0004',
   ),
   Prato(
     id: '5',
     title: 'Virado a Paulista',
     color: Colors.grey,
     imagem: 'assets/images/praias/praia-bessa.jpg',
+    descricao: 'Prato da cozinha nordestina 0005',
   ),
 ];
