@@ -17,6 +17,7 @@ class EstabelecimentoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final praia = ModalRoute.of(context)?.settings.arguments as Praia;
+    // ignore: unused_local_variable
     final tipoEstabelecimento =
         ModalRoute.of(context)?.settings.arguments as TipoEstabelecimento;
 

@@ -445,7 +445,7 @@ const DUMMY_BARES = [
       nome: 'Bar racuda',
       categorias: ['3'],
       pratosRegionais: ['1'],
-      pratosTradicionais: [],
+      pratosTradicionais: ['2'],
       porcoes: ['1', '2', '3']),
   Bar(
       id: '4',
@@ -453,8 +453,8 @@ const DUMMY_BARES = [
       nome: 'Bar toré',
       categorias: ['1'],
       pratosRegionais: ['1', '2', '3'],
-      pratosTradicionais: [],
-      porcoes: []),
+      pratosTradicionais: ['2'],
+      porcoes: ['2']),
 ];
 
 const DUMMY_RESTAURANTES = [
@@ -545,14 +545,14 @@ const DUMMY_PRATOS = const [
     id: '1',
     title: 'Baião de Dois',
     color: Colors.purple,
-    imagem: 'assets/images/praias/praia-bessa.jpg',
+    imagem: 'assets/images/pratos/pratos_regionais/baiao-dois-1.jpg',
     descricao: 'Prato da cozinha nordestina 0001',
   ),
   Prato(
     id: '2',
-    title: 'Bobó de camarão',
+    title: 'Carne de sol com macaxeira',
     color: Colors.red,
-    imagem: 'assets/images/praias/praia-bessa.jpg',
+    imagem: 'assets/images/pratos/pratos_regionais/carnedesol-commacaxeira.jpg',
     descricao: 'Prato da cozinha nordestina 0002',
   ),
   Prato(

@@ -5,6 +5,7 @@ import 'package:sun_coast/utils/app_routes.dart';
 import '../data/dummy_data.dart';
 
 class CidadePage extends StatelessWidget {
+  
   const CidadePage({super.key});
 
   void _selectPraia(BuildContext context, Cidade cidade) {

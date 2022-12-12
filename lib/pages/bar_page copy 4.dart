@@ -34,8 +34,6 @@ class Carousel extends StatefulWidget {
 class _CarouselState extends State<Carousel> {
   late PageController _pageController;
 
-  late int pratoEscolhido;
-
   List<String> images = [
     'assets/images/pratos/pratos_regionais/baiao-dois-1.jpg',
     'assets/images/pratos/pratos_regionais/carnedesol-commacaxeira.jpg',
@@ -106,8 +104,9 @@ class _CarouselState extends State<Carousel> {
                 onTap: () async {
                   await Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => PratoPage(
-                          pratoEscolhido: pratoEscolhido), // The page you want
+                      builder: (context) => const PratoPage(
+                          pratoEscolhido:
+                              'PRATOS Executivos'), // The page you want
                     ),
                   );
                 },
@@ -124,7 +123,6 @@ class _CarouselState extends State<Carousel> {
                       });
                     },
                     itemBuilder: (context, pagePosition) {
-                      pratoEscolhido = pagePosition;
                       bool active = pagePosition == activePage;
                       return slider(images, pagePosition, active);
                     },

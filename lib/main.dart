@@ -37,17 +37,23 @@ class SunCoastApp extends StatelessWidget {
             ),
       ),
       routes: {
-        AppRoutes.HOME: (context) => const EstadoPage(),
-        AppRoutes.ESTADO: (context) => const EstadoPage(),
-        AppRoutes.CIDADE: (context) => const CidadePage(),
-        AppRoutes.PRAIA: (context) => const PraiaPage(),
-        AppRoutes.PRAIABAR: (context) => const PraiaBarPage(),
-        AppRoutes.TIPOESTABELECIMENTO: (context) =>
-            const TipoEstabelecimentoPage(),
         AppRoutes.BAR: (context) => const BarPage(),
         AppRoutes.CATEGORIA: (context) => const CategoriaPage(),
+        AppRoutes.CIDADE: (context) => const CidadePage(),
+        //AppRoutes.ESTABELECIMENTO: (context) => const EstabelecimentoPage(),
+        AppRoutes.ESTADO: (context) => const EstadoPage(),
+        //AppRoutes.FASTFOOD: (context) => const FastFoodPage(),
+        AppRoutes.HOME: (context) => const EstadoPage(),
+        //AppRoutes.HOTEL: (context) => const HotelPage(),
         AppRoutes.PEDIDO: (context) => const PedidoPage(),
+        //AppRoutes.POUSADA: (context) => const PousadaPage(),
+        AppRoutes.PRAIA: (context) => const PraiaPage(),
+        AppRoutes.PRAIABAR: (context) => const PraiaBarPage(),
         AppRoutes.PRATO: (context) => const PratoPage(),
+        //AppRoutes.QUIOSQUE: (context) => const QuiosquePage(),
+        //AppRoutes.RESTAURANTE: (context) => const RestaurantePage(),
+        AppRoutes.TIPOESTABELECIMENTO: (context) =>
+            const TipoEstabelecimentoPage(),
       },
     );
   }
