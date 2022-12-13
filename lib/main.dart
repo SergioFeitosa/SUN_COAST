@@ -49,7 +49,7 @@ class SunCoastApp extends StatelessWidget {
         //AppRoutes.POUSADA: (context) => const PousadaPage(),
         AppRoutes.PRAIA: (context) => const PraiaPage(),
         AppRoutes.PRAIABAR: (context) => const PraiaBarPage(),
-        AppRoutes.PRATO: (context) => const PratoPage(),
+        AppRoutes.PRATO: (context) => PratoPage(),
         //AppRoutes.QUIOSQUE: (context) => const QuiosquePage(),
         //AppRoutes.RESTAURANTE: (context) => const RestaurantePage(),
         AppRoutes.TIPOESTABELECIMENTO: (context) =>

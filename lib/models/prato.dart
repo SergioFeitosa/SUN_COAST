@@ -14,4 +14,6 @@ class Prato {
     required this.imagem,
     required this.descricao,
   });
+
+  static contains(bool bool) {}
 }
