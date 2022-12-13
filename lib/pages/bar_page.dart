@@ -39,13 +39,9 @@ class _CarouselState extends State<Carousel> {
   List<String> images = [
     'assets/images/pratos/pratos_regionais/baiao-dois-1.jpg',
     'assets/images/pratos/pratos_regionais/carnedesol-commacaxeira.jpg',
-    'assets/images/pratos/pratos_regionais/carnedesol-comnata.jpg',
-    'assets/images/pratos/pratos_regionais/carnedesol-comqueijocoalho.jpg',
+    'assets/images/pratos/peixes/cioba-frito.jpg',
     'assets/images/pratos/pratos_regionais/rubacao.jpg',
-    'assets/images/pratos/pratos_regionais/carnedesol-commacaxeira.jpg',
-    'assets/images/pratos/pratos_regionais/carnedesol-comnata.jpg',
     'assets/images/pratos/pratos_regionais/carnedesol-comqueijocoalho.jpg',
-    'assets/images/pratos/pratos_regionais/rubacao.jpg',
   ];
 
   List<String> images2 = [
@@ -141,7 +137,7 @@ class _CarouselState extends State<Carousel> {
                 onTap: () async {
                   await Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => PratoPage(
+                      builder: (context) => const PratoPage(
                           pratoEscolhido:
                               'PRATOS Executivos'), // The page you want
                     ),
@@ -176,7 +172,7 @@ class _CarouselState extends State<Carousel> {
                 onTap: () async {
                   await Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) =>  PratoPage(
+                      builder: (context) => const PratoPage(
                           pratoEscolhido: 'Porções'), // The page you want
                     ),
                   );
@@ -210,7 +206,7 @@ class _CarouselState extends State<Carousel> {
                 onTap: () async {
                   await Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) =>  PratoPage(
+                      builder: (context) => const PratoPage(
                           pratoEscolhido: 'Peixes'), // The page you want
                     ),
                   );
@@ -244,7 +240,7 @@ class _CarouselState extends State<Carousel> {
                 onTap: () async {
                   await Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) =>  PratoPage(
+                      builder: (context) => const PratoPage(
                           pratoEscolhido: 'Bebidas'), // The page you want
                     ),
                   );

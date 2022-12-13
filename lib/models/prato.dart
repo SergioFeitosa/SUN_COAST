@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class Prato {
@@ -6,6 +8,11 @@ class Prato {
   final Color color;
   final String imagem;
   final String descricao;
+  final double preco;
+  final String observacao;
+  final String tempoPreparo;
+  final List ingredientes;
+  final String modoPreparo;
 
   const Prato({
     required this.id,
@@ -13,6 +20,11 @@ class Prato {
     this.color = Colors.orange,
     required this.imagem,
     required this.descricao,
+    required this.preco,
+    required this.observacao,
+    required this.tempoPreparo,
+    required this.ingredientes,
+    required this.modoPreparo,
   });
 
   static contains(bool bool) {}
