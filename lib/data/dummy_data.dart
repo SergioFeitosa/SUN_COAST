@@ -551,7 +551,7 @@ const DUMMY_PRATOS = const [
       preco: 35.00,
       observacao: '',
       tempoPreparo: '30 minutos',
-      ingredientes: [],
+      ingredientes: ['Arroz'],
       modoPreparo: ''),
   Prato(
       id: '2',
@@ -564,7 +564,7 @@ const DUMMY_PRATOS = const [
       preco: 35.00,
       observacao: '',
       tempoPreparo: '30 minutos',
-      ingredientes: [],
+      ingredientes: ['Carne de Sol'],
       modoPreparo: ''),
   Prato(
       id: '3',
@@ -576,7 +576,7 @@ const DUMMY_PRATOS = const [
       preco: 35.00,
       observacao: '',
       tempoPreparo: '30 minutos',
-      ingredientes: [],
+      ingredientes: ['Peixe Cioba'],
       modoPreparo: ''),
   Prato(
       id: '4',
@@ -588,7 +588,7 @@ const DUMMY_PRATOS = const [
       preco: 35.00,
       observacao: '',
       tempoPreparo: '30 minutos',
-      ingredientes: [],
+      ingredientes: ['Carne de sol'],
       modoPreparo: ''),
   Prato(
       id: '5',
@@ -601,6 +601,6 @@ const DUMMY_PRATOS = const [
       preco: 35.00,
       observacao: '',
       tempoPreparo: '30 minutos',
-      ingredientes: [],
-      modoPreparo: ''),
+      ingredientes: ['Carne de Sol'],
+      modoPreparo: 'Misture tudo'),
 ];

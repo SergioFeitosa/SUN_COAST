@@ -75,16 +75,16 @@ class _CarouselState extends State<Carousel> {
     "assets/images/bebidas/cervejas/cerveja.jpg",
   ];
 
-  int activePage = 1;
-  int activePage2 = 1;
-  int activePage3 = 1;
-  int activePage4 = 1;
-  int activePage5 = 1;
+  int activePage = 0;
+  int activePage2 = 0;
+  int activePage3 = 0;
+  int activePage4 = 0;
+  int activePage5 = 0;
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(viewportFraction: 0.8, initialPage: 1);
+    _pageController = PageController(viewportFraction: 0.8, initialPage: 0);
   }
 
   @override
@@ -103,7 +103,8 @@ class _CarouselState extends State<Carousel> {
                   await Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => PratoPage(
-                          pratoEscolhido: pratoEscolhido), // The page you want
+                          pratoEscolhido:
+                              pratoEscolhido++), // The page you want
                     ),
                   );
                 },
@@ -120,8 +121,8 @@ class _CarouselState extends State<Carousel> {
                       });
                     },
                     itemBuilder: (context, pagePosition) {
-                      pratoEscolhido = pagePosition;
                       bool active = pagePosition == activePage;
+                      pratoEscolhido = activePage;
                       return slider(images, pagePosition, active);
                     },
                   ),

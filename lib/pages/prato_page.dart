@@ -6,20 +6,20 @@ import 'package:sun_coast/models/prato.dart';
 class PratoPage extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   final pratoEscolhido;
-  
+
   const PratoPage({super.key, this.pratoEscolhido});
 
   @override
   Widget build(BuildContext context) {
     List<Prato> tabela = DUMMY_PRATOS
         // ignore: unrelated_type_equality_checks
-        .where((prato) => (prato.id.contains(pratoEscolhido.toString())))
+        .where((prato) => (prato.id.contains((pratoEscolhido + 1).toString())))
         .toList();
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '$pratoEscolhido -- Pratos',
+          tabela[0].title,
           style: const TextStyle(fontSize: 16),
         ),
       ),
@@ -62,6 +62,94 @@ class PratoPage extends StatelessWidget {
               width: double.infinity,
               child: Text(
                 tabela[0].descricao,
+                textAlign: TextAlign.start,
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              width: double.infinity,
+              child: Text(
+                'Preço',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  color: Colors.grey.shade700,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              width: double.infinity,
+              child: Text(
+                tabela[0].preco.toString(),
+                textAlign: TextAlign.start,
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              width: double.infinity,
+              child: Text(
+                'Tempo de Preparo',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  color: Colors.grey.shade700,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              width: double.infinity,
+              child: Text(
+                tabela[0].tempoPreparo,
+                textAlign: TextAlign.start,
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              width: double.infinity,
+              child: Text(
+                'Ingredientes',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  color: Colors.grey.shade700,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              width: double.infinity,
+              child: Text(
+                tabela[0].ingredientes[0],
+                textAlign: TextAlign.start,
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              width: double.infinity,
+              child: Text(
+                'Modo de Preparo',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  color: Colors.grey.shade700,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              width: double.infinity,
+              child: Text(
+                tabela[0].modoPreparo,
                 textAlign: TextAlign.start,
               ),
             )
