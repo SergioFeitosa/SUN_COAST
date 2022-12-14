@@ -94,9 +94,12 @@ class _CarouselState extends State<Carousel> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextField(
-              decoration: InputDecoration(hintText: "PRATOS REGIONAIS"),
-              style: TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: TextField(
+                decoration: InputDecoration(hintText: "PRATOS REGIONAIS"),
+                style: TextStyle(fontSize: 25.0, height: 2.0),
+              ),
             ),
             GestureDetector(
                 onTap: () async {
@@ -130,10 +133,13 @@ class _CarouselState extends State<Carousel> {
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: indicators(images.length, activePage)),
-            const TextField(
-              decoration: InputDecoration(hintText: "PRATOS EXECUTIVOS"),
-              style: TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
-            ),
+            const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: TextField(
+                  decoration: InputDecoration(hintText: "PRATOS EXECUTIVOS"),
+                  style:
+                      TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
+                )),
             GestureDetector(
                 onTap: () async {
                   await Navigator.of(context).push(
@@ -165,10 +171,13 @@ class _CarouselState extends State<Carousel> {
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: indicators(images2.length, activePage2)),
-            const TextField(
-              decoration: InputDecoration(hintText: "PORÇÕES"),
-              style: TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
-            ),
+            const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: TextField(
+                  decoration: InputDecoration(hintText: "PORÇÕES"),
+                  style:
+                      TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
+                )),
             GestureDetector(
                 onTap: () async {
                   await Navigator.of(context).push(
@@ -199,10 +208,13 @@ class _CarouselState extends State<Carousel> {
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: indicators(images3.length, activePage3)),
-            const TextField(
-              decoration: InputDecoration(hintText: "PEIXES"),
-              style: TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
-            ),
+            const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: TextField(
+                  decoration: InputDecoration(hintText: "PEIXES"),
+                  style:
+                      TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
+                )),
             GestureDetector(
                 onTap: () async {
                   await Navigator.of(context).push(
@@ -233,10 +245,13 @@ class _CarouselState extends State<Carousel> {
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: indicators(images4.length, activePage4)),
-            const TextField(
-              decoration: InputDecoration(hintText: "BEBIDAS"),
-              style: TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
-            ),
+            const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: TextField(
+                  decoration: InputDecoration(hintText: "BEBIDAS"),
+                  style:
+                      TextStyle(fontSize: 25.0, height: 2.0, color: Colors.red),
+                )),
             GestureDetector(
                 onTap: () async {
                   await Navigator.of(context).push(
