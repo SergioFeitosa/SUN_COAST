@@ -7,6 +7,7 @@ import 'package:sun_coast/models/categoria.dart';
 import 'package:sun_coast/models/estabelecimento.dart';
 import 'package:sun_coast/models/estado.dart';
 import 'package:sun_coast/models/cidade.dart';
+import 'package:sun_coast/models/pedido.dart';
 import 'package:sun_coast/models/prato.dart';
 import 'package:sun_coast/models/restaurante.dart';
 
@@ -427,6 +428,7 @@ const DUMMY_BARES = [
       id: '1',
       imagem: 'assets/images/praias/praia-bessa.jpg',
       nome: 'Bar do Zé',
+      pedidos: ['1', '2'],
       categorias: ['1', '2'],
       pratosRegionais: ['1', '2', '3'],
       pratosTradicionais: ['1', '2', '3'],
@@ -436,6 +438,7 @@ const DUMMY_BARES = [
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Bar Bantinho',
       categorias: ['2'],
+      pedidos: ['1', '2'],
       pratosRegionais: ['1'],
       pratosTradicionais: ['1'],
       porcoes: []),
@@ -444,6 +447,7 @@ const DUMMY_BARES = [
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Bar racuda',
       categorias: ['3'],
+      pedidos: ['1', '2'],
       pratosRegionais: ['1'],
       pratosTradicionais: ['2'],
       porcoes: ['1', '2', '3']),
@@ -452,6 +456,7 @@ const DUMMY_BARES = [
       imagem: 'assets/images/praias/praia-cabo-branco.jpg',
       nome: 'Bar toré',
       categorias: ['1'],
+      pedidos: ['1', '2'],
       pratosRegionais: ['1', '2', '3'],
       pratosTradicionais: ['2'],
       porcoes: ['2']),
@@ -603,4 +608,42 @@ const DUMMY_PRATOS = const [
       tempoPreparo: '30 minutos',
       ingredientes: ['Carne de Sol'],
       modoPreparo: 'Misture tudo'),
+];
+
+const DUMMY_PEDIDOS = [
+  Pedido(
+    id: '1',
+    local: 'mesa01',
+    itens: ['1', '2', '3'],
+    horaPedido: '12:00',
+    horaEntrega: '12:25',
+  ),
+  Pedido(
+    id: '2',
+    local: '2',
+    itens: ['1', '2', '3'],
+    horaPedido: '12:00',
+    horaEntrega: '12:25',
+  ),
+  Pedido(
+    id: '3',
+    local: '3',
+    itens: ['1', '2', '3'],
+    horaPedido: '12:00',
+    horaEntrega: '12:25',
+  ),
+  Pedido(
+    id: '4',
+    local: '1',
+    itens: ['1', '2', '3'],
+    horaPedido: '12:00',
+    horaEntrega: '12:25',
+  ),
+  Pedido(
+    id: '5',
+    local: '3',
+    itens: ['1', '2', '3'],
+    horaPedido: '12:00',
+    horaEntrega: '12:25',
+  ),
 ];

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:input_quantity/input_quantity.dart';
 import 'package:sun_coast/data/dummy_data.dart';
 import 'package:sun_coast/models/prato.dart';
+import 'package:sun_coast/pages/pedido_page.dart';
 
 // ignore: must_be_immutable
 class PratoPage extends StatelessWidget {
@@ -11,6 +13,8 @@ class PratoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String localPedido = 'mesa01';
+
     List<Prato> tabela = DUMMY_PRATOS
         // ignore: unrelated_type_equality_checks
         .where((prato) => (prato.id.contains((pratoEscolhido + 1).toString())))
@@ -26,7 +30,35 @@ class PratoPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 10),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InputQty(
+                    maxVal: 10,
+                    initVal: 0.0,
+                    steps: 1,
+                    minVal: 0,
+                    onQtyChanged: (val) {
+                      print(val);
+                    },
+                  ),
+                  ElevatedButton(
+                    style: TextButton.styleFrom(foregroundColor: Colors.white),
+                    onPressed: () async {
+                      await Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => PedidoPage(
+                              localPedido: localPedido), // The page you want
+                        ),
+                      );
+                    },
+                    child: const Text('Preview'),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
             SizedBox(
               height: 200,
               width: double.infinity,

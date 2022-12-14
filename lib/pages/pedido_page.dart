@@ -1,32 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:sun_coast/models/cidade.dart';
-import 'package:sun_coast/models/praia.dart';
-import 'package:sun_coast/utils/app_routes.dart';
 import '../data/dummy_data.dart';
 
 class PedidoPage extends StatelessWidget {
-  const PedidoPage({super.key});
+  // ignore: prefer_typing_uninitialized_variables
+  final localPedido;
 
-  void _selectTipoEstabelecimento(BuildContext context, Praia praia) {
-    Navigator.of(context).pushNamed(
-      AppRoutes.TIPOESTABELECIMENTO,
-      arguments: praia,
-    );
-  }
+  const PedidoPage({super.key, this.localPedido});
 
   @override
   Widget build(BuildContext context) {
-    final cidade = ModalRoute.of(context)?.settings.arguments as Cidade;
-
-    final tabela = DUMMY_PRAIAS
-        .where((praia) => cidade.praias.contains(praia.id))
-        .toList();
+    final tabela =
+        DUMMY_PEDIDOS.where((pedido) => (pedido.local == localPedido)).toList();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          '${cidade.nome} -- Praias',
-          style: const TextStyle(fontSize: 16),
+        title: const Text(
+          'Pedidos',
+          style: TextStyle(fontSize: 16),
         ),
       ),
       body: Column(
@@ -51,16 +41,12 @@ class PedidoPage extends StatelessWidget {
           ),
           Expanded(
             child: ListView.separated(
-              itemBuilder: (BuildContext context, int praia) {
+              itemBuilder: (BuildContext context, int pedido) {
                 return ListTile(
-                  onTap: () =>
-                      _selectTipoEstabelecimento(context, tabela[praia]),
-                  leading: Image.asset(
-                    tabela[praia].imagem,
-                    width: 50,
-                  ),
-                  title: Text('  ${tabela[praia].nome}'),
-                  trailing: Text(tabela[praia].temperatura.toString()),
+                  onTap: () => {},
+                  leading: Text('  ${tabela[pedido].local}'),
+                  title: Text('  ${tabela[pedido].horaPedido}'),
+                  trailing: Text('  ${tabela[pedido].horaPedido}'),
                 );
               },
               padding: const EdgeInsets.all(16),
