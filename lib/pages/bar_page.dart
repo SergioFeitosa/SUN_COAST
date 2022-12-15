@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sun_coast/models/bar.dart';
 import 'package:sun_coast/pages/prato_page.dart';
 
 class BarPage extends StatelessWidget {
@@ -6,6 +7,8 @@ class BarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bar = ModalRoute.of(context)?.settings.arguments as Bar?;
+
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
@@ -16,15 +19,18 @@ class BarPage extends StatelessWidget {
             style: TextStyle(fontSize: 16),
           ),
         ),
-        body: const Carousel(),
+        body: Carousel(bar: bar),
       ),
     );
   }
 }
 
 class Carousel extends StatefulWidget {
+  final Bar? bar;
+
   const Carousel({
     Key? key,
+    this.bar,
   }) : super(key: key);
 
   @override
@@ -32,6 +38,8 @@ class Carousel extends StatefulWidget {
 }
 
 class _CarouselState extends State<Carousel> {
+  late Bar bar;
+
   late PageController _pageController;
 
   late int pratoEscolhido;
@@ -89,6 +97,8 @@ class _CarouselState extends State<Carousel> {
 
   @override
   Widget build(BuildContext context) {
+    //final bar = ModalRoute.of(context)?.settings.arguments as Bar?;
+
     return Center(
       child: SingleChildScrollView(
         child: Column(
@@ -106,6 +116,7 @@ class _CarouselState extends State<Carousel> {
                   await Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => PratoPage(
+                          bar: widget.bar,
                           pratoEscolhido:
                               pratoEscolhido++), // The page you want
                     ),

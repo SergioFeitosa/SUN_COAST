@@ -1,15 +1,20 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:input_quantity/input_quantity.dart';
 import 'package:sun_coast/data/dummy_data.dart';
+import 'package:sun_coast/models/bar.dart';
 import 'package:sun_coast/models/prato.dart';
 import 'package:sun_coast/pages/pedido_page.dart';
 
 // ignore: must_be_immutable
 class PratoPage extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
+  final bar;
+  // ignore: prefer_typing_uninitialized_variables
   final pratoEscolhido;
 
-  const PratoPage({super.key, this.pratoEscolhido});
+  const PratoPage({super.key, this.bar, this.pratoEscolhido});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,7 @@ class PratoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          tabela[0].title,
+          '${bar.nome} == ${tabela[0].title}',
           style: const TextStyle(fontSize: 16),
         ),
       ),
@@ -38,17 +43,18 @@ class PratoPage extends StatelessWidget {
                 children: [
                   InputQty(
                     maxVal: 10,
-                    initVal: 0,
+                    initVal: 0.0,
                     steps: 1,
                     minVal: 0,
                     onQtyChanged: (val) {
-                      quantidade = val as double?;
+                      quantidade = val as double;
                     },
                   ),
                   ElevatedButton(
                     style: TextButton.styleFrom(foregroundColor: Colors.white),
                     onPressed: () async {
                       await gravarPedido(
+                        bar: bar,
                         quantidade: quantidade,
                         item: tabela[0].id,
                         local: localPedido,
@@ -210,12 +216,14 @@ class PratoPage extends StatelessWidget {
 
 gravarPedido({
   required String id,
+  required Bar bar,
   required String local,
   required double? quantidade,
   required String item,
   required String horaPedido,
 }) {
   print(id);
+  print(bar.nome);
   print(local);
   print(quantidade);
   print(item);
