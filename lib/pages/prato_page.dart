@@ -13,7 +13,9 @@ class PratoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String item = '1';
     String localPedido = 'mesa01';
+    double? quantidade = 0;
 
     List<Prato> tabela = DUMMY_PRATOS
         // ignore: unrelated_type_equality_checks
@@ -36,12 +38,25 @@ class PratoPage extends StatelessWidget {
                 children: [
                   InputQty(
                     maxVal: 10,
-                    initVal: 0.0,
+                    initVal: 0,
                     steps: 1,
                     minVal: 0,
                     onQtyChanged: (val) {
-                      print(val);
+                      quantidade = val as double?;
                     },
+                  ),
+                  ElevatedButton(
+                    style: TextButton.styleFrom(foregroundColor: Colors.white),
+                    onPressed: () async {
+                      await gravarPedido(
+                        quantidade: quantidade,
+                        item: tabela[0].id,
+                        local: localPedido,
+                        id: '1',
+                        horaPedido: '12:00',
+                      );
+                    },
+                    child: const Text('Preview'),
                   ),
                   ElevatedButton(
                     style: TextButton.styleFrom(foregroundColor: Colors.white),
@@ -49,6 +64,7 @@ class PratoPage extends StatelessWidget {
                       await Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => PedidoPage(
+                              item: item, // The page you want
                               localPedido: localPedido), // The page you want
                         ),
                       );
@@ -190,4 +206,18 @@ class PratoPage extends StatelessWidget {
       ),
     );
   }
+}
+
+gravarPedido({
+  required String id,
+  required String local,
+  required double? quantidade,
+  required String item,
+  required String horaPedido,
+}) {
+  print(id);
+  print(local);
+  print(quantidade);
+  print(item);
+  print(horaPedido);
 }

@@ -3,9 +3,10 @@ import '../data/dummy_data.dart';
 
 class PedidoPage extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
+  final item;
   final localPedido;
 
-  const PedidoPage({super.key, this.localPedido});
+  const PedidoPage({super.key, this.item , this.localPedido});
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +27,15 @@ class PedidoPage extends StatelessWidget {
             color: Colors.amber,
             child: const ListTile(
               leading: Text(
-                'Imagem',
+                'Item',
                 style: TextStyle(fontSize: 16),
               ),
               title: Text(
-                'Nome',
+                'Local',
                 style: TextStyle(fontSize: 16),
               ),
               trailing: Text(
-                'Temperatura',
+                'Hora',
                 style: TextStyle(fontSize: 16),
               ),
             ),
@@ -44,8 +45,8 @@ class PedidoPage extends StatelessWidget {
               itemBuilder: (BuildContext context, int pedido) {
                 return ListTile(
                   onTap: () => {},
-                  leading: Text('  ${tabela[pedido].local}'),
-                  title: Text('  ${tabela[pedido].horaPedido}'),
+                  leading: Text('  ${tabela[pedido].itens[0]}'),
+                  title: Text('  ${tabela[pedido].local}'),
                   trailing: Text('  ${tabela[pedido].horaPedido}'),
                 );
               },
