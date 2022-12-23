@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sun_coast/data/dummy_data.dart';
 import 'package:sun_coast/models/bar.dart';
 import 'package:sun_coast/pages/prato_page.dart';
 
@@ -44,45 +45,6 @@ class _CarouselState extends State<Carousel> {
 
   late int pratoEscolhido;
 
-  List<String> images = [
-    'assets/images/pratos/pratos_regionais/baiao-dois-1.jpg',
-    'assets/images/pratos/pratos_regionais/carnedesol-commacaxeira.jpg',
-    'assets/images/pratos/peixes/cioba-frito.jpg',
-    'assets/images/pratos/pratos_regionais/rubacao.jpg',
-    'assets/images/pratos/pratos_regionais/carnedesol-comqueijocoalho.jpg',
-  ];
-
-  List<String> images2 = [
-    "assets/images/pratos/pratos_executivos/berinjela-recheada.jpg",
-    "assets/images/pratos/pratos_executivos/espaguete-abolonhesa.jpg",
-    "assets/images/pratos/pratos_executivos/pratoespecial.jpg",
-    "assets/images/pratos/pratos_executivos/pratododia.jpg",
-    "assets/images/pratos/pratos_executivos/pratododia-small.jpg",
-    "assets/images/pratos/pratos_executivos/pratoespecial.jpg",
-    "assets/images/pratos/pratos_executivos/berinjela-recheada.jpg",
-  ];
-  List<String> images3 = [
-    "assets/images/pratos/porcoes/porcoes.jpg",
-    "assets/images/pratos/porcoes/porcoesespeciais.jpg",
-    "assets/images/pratos/porcoes/porcoes.jpg",
-    "assets/images/pratos/porcoes/porcoesespeciais.jpg",
-    "assets/images/pratos/porcoes/porcoes.jpg",
-  ];
-  List<String> images4 = [
-    "assets/images/pratos/peixes/cioba-frito.jpg",
-    "assets/images/pratos/peixes/pescadaamarela.jpg",
-    "assets/images/pratos/peixes/tilapia-aomolhodealcaparras.jpg",
-    "assets/images/pratos/peixes/tilapia-aomolhodecamarao.jpg",
-    "assets/images/pratos/peixes/tilapia-filecomlegumes.jpg",
-    "assets/images/pratos/peixes/tilapia-fileempanado.jpg",
-    "assets/images/pratos/peixes/pescadaamarela.jpg",
-    "assets/images/pratos/peixes/tilapia-aomolhodecamarao.jpg",
-  ];
-  List<String> images5 = [
-    "assets/images/bebidas/refrigerantes/cocacola-lata350ml.jpg",
-    "assets/images/bebidas/cervejas/cerveja.jpg",
-  ];
-
   int activePage = 0;
   int activePage2 = 0;
   int activePage3 = 0;
@@ -126,7 +88,7 @@ class _CarouselState extends State<Carousel> {
                   width: MediaQuery.of(context).size.width,
                   height: 200,
                   child: PageView.builder(
-                    itemCount: images.length,
+                    itemCount: DUMMY_IMAGES_PRATOS_REGIONAIS.length,
                     pageSnapping: true,
                     controller: _pageController,
                     onPageChanged: (page) {
@@ -137,13 +99,15 @@ class _CarouselState extends State<Carousel> {
                     itemBuilder: (context, pagePosition) {
                       bool active = pagePosition == activePage;
                       pratoEscolhido = activePage;
-                      return slider(images, pagePosition, active);
+                      return slider(
+                          DUMMY_IMAGES_PRATOS_REGIONAIS, pagePosition, active);
                     },
                   ),
                 )),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: indicators(images.length, activePage)),
+                children: indicators(
+                    DUMMY_IMAGES_PRATOS_REGIONAIS.length, activePage)),
             const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
@@ -165,7 +129,7 @@ class _CarouselState extends State<Carousel> {
                   width: MediaQuery.of(context).size.width,
                   height: 200,
                   child: PageView.builder(
-                    itemCount: images2.length,
+                    itemCount: DUMMY_IMAGES_PRATOS_EXECUTIVOS.length,
                     pageSnapping: true,
                     controller: _pageController,
                     onPageChanged: (page) {
@@ -175,13 +139,15 @@ class _CarouselState extends State<Carousel> {
                     },
                     itemBuilder: (context, pagePosition) {
                       bool active = pagePosition == activePage2;
-                      return slider(images2, pagePosition, active);
+                      return slider(
+                          DUMMY_IMAGES_PRATOS_EXECUTIVOS, pagePosition, active);
                     },
                   ),
                 )),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: indicators(images2.length, activePage2)),
+                children: indicators(
+                    DUMMY_IMAGES_PRATOS_EXECUTIVOS.length, activePage2)),
             const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
@@ -202,7 +168,7 @@ class _CarouselState extends State<Carousel> {
                   width: MediaQuery.of(context).size.width,
                   height: 200,
                   child: PageView.builder(
-                    itemCount: images3.length,
+                    itemCount: DUMMY_IMAGES_PORCOES.length,
                     pageSnapping: true,
                     controller: _pageController,
                     onPageChanged: (page) {
@@ -212,13 +178,13 @@ class _CarouselState extends State<Carousel> {
                     },
                     itemBuilder: (context, pagePosition) {
                       bool active = pagePosition == activePage3;
-                      return slider(images3, pagePosition, active);
+                      return slider(DUMMY_IMAGES_PORCOES, pagePosition, active);
                     },
                   ),
                 )),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: indicators(images3.length, activePage3)),
+                children: indicators(DUMMY_IMAGES_PORCOES.length, activePage3)),
             const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
@@ -239,7 +205,7 @@ class _CarouselState extends State<Carousel> {
                   width: MediaQuery.of(context).size.width,
                   height: 200,
                   child: PageView.builder(
-                    itemCount: images4.length,
+                    itemCount: DUMMY_IMAGES_PEIXES.length,
                     pageSnapping: true,
                     controller: _pageController,
                     onPageChanged: (page) {
@@ -249,13 +215,13 @@ class _CarouselState extends State<Carousel> {
                     },
                     itemBuilder: (context, pagePosition) {
                       bool active = pagePosition == activePage4;
-                      return slider(images4, pagePosition, active);
+                      return slider(DUMMY_IMAGES_PEIXES, pagePosition, active);
                     },
                   ),
                 )),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: indicators(images4.length, activePage4)),
+                children: indicators(DUMMY_IMAGES_PEIXES.length, activePage4)),
             const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
@@ -276,7 +242,7 @@ class _CarouselState extends State<Carousel> {
                   width: MediaQuery.of(context).size.width,
                   height: 200,
                   child: PageView.builder(
-                    itemCount: images5.length,
+                    itemCount: DUMMY_IMAGES_BEBIDAS.length,
                     pageSnapping: true,
                     controller: _pageController,
                     onPageChanged: (page) {
@@ -286,13 +252,13 @@ class _CarouselState extends State<Carousel> {
                     },
                     itemBuilder: (context, pagePosition) {
                       bool active = pagePosition == activePage5;
-                      return slider(images5, pagePosition, active);
+                      return slider(DUMMY_IMAGES_BEBIDAS, pagePosition, active);
                     },
                   ),
                 )),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: indicators(images5.length, activePage5)),
+                children: indicators(DUMMY_IMAGES_BEBIDAS.length, activePage5)),
           ],
         ),
       ),

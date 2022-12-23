@@ -18,8 +18,8 @@ class PratoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String item = '1';
     String localPedido = 'mesa01';
+    String telefone = '11982551256';
     double? quantidade = 0;
 
     List<Prato> tabela = DUMMY_PRATOS
@@ -60,22 +60,21 @@ class PratoPage extends StatelessWidget {
                         local: localPedido,
                         id: '1',
                         horaPedido: '12:00',
+                        telefone: '11982551256',
                       );
                     },
-                    child: const Text('Preview'),
+                    child: const Text('Adicionar Item'),
                   ),
                   ElevatedButton(
                     style: TextButton.styleFrom(foregroundColor: Colors.white),
                     onPressed: () async {
-                      await Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => PedidoPage(
-                              item: item, // The page you want
-                              localPedido: localPedido), // The page you want
+                      await Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PedidoPage(
+                          telefone: telefone, // The page you want
                         ),
-                      );
+                      ));
                     },
-                    child: const Text('Preview'),
+                    child: const Text('Ver Pedido'),
                   ),
                 ],
               ),
@@ -206,6 +205,28 @@ class PratoPage extends StatelessWidget {
                 tabela[0].modoPreparo,
                 textAlign: TextAlign.start,
               ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              width: double.infinity,
+              child: Text(
+                'Modo de Preparo',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  color: Colors.grey.shade700,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              width: double.infinity,
+              child: const Text(
+                'telefone',
+                textAlign: TextAlign.start,
+              ),
             )
           ],
         ),
@@ -221,6 +242,7 @@ gravarPedido({
   required double? quantidade,
   required String item,
   required String horaPedido,
+  required String telefone,
 }) {
   print(id);
   print(bar.nome);
@@ -228,4 +250,5 @@ gravarPedido({
   print(quantidade);
   print(item);
   print(horaPedido);
+  print(telefone);
 }

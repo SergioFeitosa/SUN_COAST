@@ -553,7 +553,7 @@ const DUMMY_PRATOS = const [
       imagem: 'assets/images/pratos/pratos_regionais/baiao-dois-1.jpg',
       descricao:
           'O "Baião de Dois" é um prato típico do Nordeste do Brasil, vindo do Ceará. É um preparado de arroz e feijão, usado preferencialmente o feijão de corda. ',
-      preco: 35.00,
+      preco: 25.00,
       observacao: '',
       tempoPreparo: '30 minutos',
       ingredientes: ['Arroz'],
@@ -566,7 +566,7 @@ const DUMMY_PRATOS = const [
           'assets/images/pratos/pratos_regionais/carnedesol-commacaxeira.jpg',
       descricao:
           'Típica do nordeste brasileiro, a carne de sol, denominada também carne de vento e carne do sertão, é um método de conservar alimentos de origem animal salgando-se e secando-se, em local coberto e bem ventilado, peças de carne, em geral bovina. Apesar do nome, não é exposta aos raios solares. A mandioca é uma espécie arbustiva, lenhosa e perene. ',
-      preco: 35.00,
+      preco: 45.00,
       observacao: '',
       tempoPreparo: '30 minutos',
       ingredientes: ['Carne de Sol'],
@@ -578,7 +578,7 @@ const DUMMY_PRATOS = const [
       imagem: 'assets/images/pratos/peixes/cioba-frito.jpg',
       descricao:
           'Peixe abundante no litoral nordestino. O prato atende até 3 pessoas. Acompanhamento: arroz e fritas ',
-      preco: 35.00,
+      preco: 85.00,
       observacao: '',
       tempoPreparo: '30 minutos',
       ingredientes: ['Peixe Cioba'],
@@ -608,6 +608,17 @@ const DUMMY_PRATOS = const [
       tempoPreparo: '30 minutos',
       ingredientes: ['Carne de Sol'],
       modoPreparo: 'Misture tudo'),
+  Prato(
+      id: '6',
+      title: 'Espaguete com camarão',
+      color: Colors.grey,
+      imagem: 'assets/images/pratos/frutos _do_mar/camarao-espaguete.jpg',
+      descricao: 'Espaguete com camarão a milanesa',
+      preco: 35.00,
+      observacao: '',
+      tempoPreparo: '30 minutos',
+      ingredientes: ['Espaguete', 'Camarão Rosa'],
+      modoPreparo: 'Misture tudo'),
 ];
 
 const DUMMY_PEDIDOS = [
@@ -617,13 +628,15 @@ const DUMMY_PEDIDOS = [
     itens: ['1', '2', '3'],
     horaPedido: '12:00',
     horaEntrega: '12:25',
+    telefone: '11982551256',
   ),
   Pedido(
     id: '2',
-    local: '2',
-    itens: ['1', '2', '3'],
+    local: 'mesa01',
+    itens: ['4', '5', '6'],
     horaPedido: '12:00',
     horaEntrega: '12:25',
+    telefone: '11982551256',
   ),
   Pedido(
     id: '3',
@@ -631,6 +644,7 @@ const DUMMY_PEDIDOS = [
     itens: ['1', '2', '3'],
     horaPedido: '12:00',
     horaEntrega: '12:25',
+    telefone: '11982551256',
   ),
   Pedido(
     id: '4',
@@ -638,6 +652,7 @@ const DUMMY_PEDIDOS = [
     itens: ['1', '2', '3'],
     horaPedido: '12:00',
     horaEntrega: '12:25',
+    telefone: '83991377693',
   ),
   Pedido(
     id: '5',
@@ -645,5 +660,48 @@ const DUMMY_PEDIDOS = [
     itens: ['1', '2', '3'],
     horaPedido: '12:00',
     horaEntrega: '12:25',
+    telefone: '83991377693',
   ),
+];
+
+const List<String> DUMMY_IMAGES_PRATOS_REGIONAIS = [
+  'assets/images/pratos/pratos_regionais/baiao-dois-1.jpg',
+  'assets/images/pratos/pratos_regionais/carnedesol-commacaxeira.jpg',
+  'assets/images/pratos/peixes/cioba-frito.jpg',
+  'assets/images/pratos/pratos_regionais/rubacao.jpg',
+  'assets/images/pratos/pratos_regionais/carnedesol-comqueijocoalho.jpg',
+];
+
+const List<String> DUMMY_IMAGES_PRATOS_EXECUTIVOS = [
+  "assets/images/pratos/pratos_executivos/berinjela-recheada.jpg",
+  "assets/images/pratos/pratos_executivos/espaguete-abolonhesa.jpg",
+  "assets/images/pratos/pratos_executivos/pratoespecial.jpg",
+  "assets/images/pratos/pratos_executivos/pratododia.jpg",
+  "assets/images/pratos/pratos_executivos/pratododia-small.jpg",
+  "assets/images/pratos/pratos_executivos/pratoespecial.jpg",
+  "assets/images/pratos/pratos_executivos/berinjela-recheada.jpg",
+];
+
+const List<String> DUMMY_IMAGES_PORCOES = [
+  "assets/images/pratos/porcoes/porcoes.jpg",
+  "assets/images/pratos/porcoes/porcoesespeciais.jpg",
+  "assets/images/pratos/porcoes/porcoes.jpg",
+  "assets/images/pratos/porcoes/porcoesespeciais.jpg",
+  "assets/images/pratos/porcoes/porcoes.jpg",
+];
+
+const List<String> DUMMY_IMAGES_PEIXES = [
+  "assets/images/pratos/peixes/cioba-frito.jpg",
+  "assets/images/pratos/peixes/pescadaamarela.jpg",
+  "assets/images/pratos/peixes/tilapia-aomolhodealcaparras.jpg",
+  "assets/images/pratos/peixes/tilapia-aomolhodecamarao.jpg",
+  "assets/images/pratos/peixes/tilapia-filecomlegumes.jpg",
+  "assets/images/pratos/peixes/tilapia-fileempanado.jpg",
+  "assets/images/pratos/peixes/pescadaamarela.jpg",
+  "assets/images/pratos/peixes/tilapia-aomolhodecamarao.jpg",
+];
+
+const List<String> DUMMY_IMAGES_BEBIDAS = [
+  "assets/images/bebidas/refrigerantes/cocacola-lata350ml.jpg",
+  "assets/images/bebidas/cervejas/cerveja.jpg",
 ];

@@ -5,6 +5,7 @@ class Pedido {
   final List itens;
   final String horaPedido;
   final String horaEntrega;
+  final String telefone;
 
   const Pedido({
     required this.id,
@@ -12,5 +13,6 @@ class Pedido {
     required this.itens,
     required this.horaPedido,
     required this.horaEntrega,
+    required this.telefone,
   });
 }
