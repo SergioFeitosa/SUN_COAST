@@ -72,14 +72,28 @@ class PedidoPage extends StatelessWidget {
               separatorBuilder: (_, __) => const Divider(),
             ),
           ),
-          Text.rich(
-            TextSpan(
-              text: 'Valor total $total',
-              style: const TextStyle(fontSize: 40),
-            ),
-          ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _settingModalBottomSheet(context, total);
+        },
+        child: const Icon(Icons.add),
+      ),
     );
+  }
+
+  void _settingModalBottomSheet(context, double total) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return Wrap(
+            children: <Widget>[
+              ListTile(
+                leading: Text('Valor Total $total'),
+              )
+            ],
+          );
+        });
   }
 }
